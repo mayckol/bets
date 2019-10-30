@@ -1,11 +1,11 @@
 <template>
-    <q-page class="text-center bg-adm-home row container">
-        <div class="col-lg-12 col-sm-12">
-            <h5>Acompanhe estatísticas sobre a plataforma</h5>
+    <q-page padding class="text-center bg-adm-home container">
+        <div class="q-gutter-md row justify-center" style="font-size: 4em">
+            <q-spinner-gears color="cyan"  style="margin-top: 30px"/>
+            <h1 v-if="this.$q.platform.is.desktop">Acompanhe estatísticas sobre a plataforma</h1>
+            <h3 v-else-if="this.$q.platform.is.mobile">Acompanhe estatísticas sobre a plataforma</h3>
         </div>
-        <div class="col-lg-12 col-sm-12">
-            <chart></chart>
-        </div>
+        <chart></chart>
     </q-page>
 </template>
 
