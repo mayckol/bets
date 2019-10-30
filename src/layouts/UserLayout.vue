@@ -12,7 +12,7 @@
                 />
 
                 <q-toolbar-title>
-                    Painel do Administrador
+                    Painel do Usuario
                 </q-toolbar-title>
 
                 <div>Bet In Foot</div>
@@ -74,7 +74,7 @@
 
 <script>
     export default {
-        name: 'AdmLayout',
+        name: 'UserLayout',
 
         data() {
             return {
