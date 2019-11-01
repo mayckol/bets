@@ -27,6 +27,15 @@
         >
             <q-list>
                 <q-item-label header>Ações</q-item-label>
+                <q-item clickable v-ripple to="/dashboard-adm" exact>
+                    <q-item-section avatar>
+                        <q-icon name="home"/>
+                    </q-item-section>
+                    <q-item-section>
+                        <q-item-label>Home</q-item-label>
+                        <q-item-label class="font-white" caption>Início</q-item-label>
+                    </q-item-section>
+                </q-item>
                 <q-item clickable v-ripple to="/" exact>
                     <q-item-section avatar>
                         <q-icon name="sports_soccer"/>
@@ -54,7 +63,7 @@
                         <q-item-label class="font-white" caption>Chat</q-item-label>
                     </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple to="/logout" exact>
+                <q-item clickable v-ripple @click="logout" exact>
                     <q-item-section avatar>
                         <q-icon name="exit_to_app"/>
                     </q-item-section>
@@ -78,7 +87,15 @@
 
         data() {
             return {
-                leftDrawerOpen: false
+                leftDrawerOpen: false,
+                confirm: false
+            }
+        },
+        methods: {
+            async logout() {
+                await this.$store.dispatch("auth/destroyToken").then(response => {
+                    this.$router.push({name: "login"});
+                });
             }
         }
     }

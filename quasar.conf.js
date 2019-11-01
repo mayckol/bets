@@ -42,7 +42,9 @@ module.exports = function (ctx) {
             //            (not treeshaking Quasar; biggest bundle size; convenient)
             all: 'auto',
 
-            components: [],
+            components: [
+                // 'QParallax'
+            ],
             directives: [],
 
             // Quasar plugins
@@ -54,13 +56,13 @@ module.exports = function (ctx) {
 
         // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-build
         build: {
-            env: ctx.dev
-                ? {
-                    API: JSON.stringify('http://betinfoot.tst/api')
-                }
-                : {
-                    API: JSON.stringify('http://betinfoot.tst/api')
-                }, //   this.axios.get(`${process.env.API}/{your-option}`)
+            // env: ctx.dev
+            //     ? {
+            //         API: JSON.stringify('http://betinfoot.tst/api')
+            //     }
+            //     : {
+            //         API: JSON.stringify('http://betinfoot.tst/api')
+            //     }, //   this.axios.get(`${process.env.API}/{your-option}`)
             scopeHoisting: true,
             vueRouterMode: 'history',
             // showProgress: false,
