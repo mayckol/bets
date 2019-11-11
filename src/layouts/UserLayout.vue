@@ -27,22 +27,31 @@
         >
             <q-list>
                 <q-item-label header>Ações</q-item-label>
-                <q-item clickable v-ripple to="/" exact>
+                <q-item clickable v-ripple to="/dashboard" exact>
+                    <q-item-section avatar>
+                        <q-icon name="home"/>
+                    </q-item-section>
+                    <q-item-section>
+                        <q-item-label>Home</q-item-label>
+                        <q-item-label class="font-white" caption>Início</q-item-label>
+                    </q-item-section>
+                </q-item>
+                <q-item clickable v-ripple to="/matches" exact>
                     <q-item-section avatar>
                         <q-icon name="sports_soccer"/>
                     </q-item-section>
                     <q-item-section>
-                        <q-item-label>Cadastrar nova rodada</q-item-label>
-                        <q-item-label class="font-white" caption>Escolha os jogos da rodada</q-item-label>
+                        <q-item-label>Lista de jogos da rodada</q-item-label>
+                        <q-item-label class="font-white" caption>Listar jogos</q-item-label>
                     </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple to="/permissions" exact>
+                <q-item clickable v-ripple to="/bets" exact>
                     <q-item-section avatar>
-                        <q-icon name="vpn_key"/>
+                        <q-icon name="money"/>
                     </q-item-section>
                     <q-item-section>
-                        <q-item-label>Permissão de Usuários</q-item-label>
-                        <q-item-label class="font-white" caption>Habilitar usuário PRO</q-item-label>
+                        <q-item-label>Apostar</q-item-label>
+                        <q-item-label class="font-white" caption>Apostas</q-item-label>
                     </q-item-section>
                 </q-item>
                 <q-item clickable v-ripple to="/chat" exact>

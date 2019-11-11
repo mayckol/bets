@@ -1,0 +1,26 @@
+export default {
+    matches: [],
+    lastMatchesByTeam: [],
+    teams: [
+        {id: 2, name: 'athleticoparanaense'},
+        {id: 3, name: 'atleticomineiro'},
+        {id: 4, name: 'avai'},
+        {id: 5, name: 'bahia'},
+        {id: 6, name: 'botafogo'},
+        {id: 7, name: 'ceara'},
+        {id: 8, name: 'chapecoense'},
+        {id: 9, name: 'corinthians'},
+        {id: 10, name: 'cruzeiro'},
+        {id: 11, name: 'csa'},
+        {id: 12, name: 'flamengo'},
+        {id: 13, name: 'fluminense'},
+        {id: 14, name: 'fortaleza'},
+        {id: 15, name: 'goias'},
+        {id: 16, name: 'gremio'},
+        {id: 17, name: 'internacional'},
+        {id: 18, name: 'palmeiras'},
+        {id: 19, name: 'santos'},
+        {id: 20, name: 'saopaulo'},
+        {id: 21, name: 'vascodagama'},
+    ]
+}

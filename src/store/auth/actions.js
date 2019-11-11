@@ -54,12 +54,12 @@ export function retrieveUser(context) {
       })
       .catch(error => {
         reject(error);
-      });
-  });
-};
+      })
+  })
+}
 
 export function register(context, data) {
-  Loading.show();
+  Loading.show()
   return new Promise((resolve, reject) => {
     axiosInstance
       .post("register", {
@@ -73,15 +73,15 @@ export function register(context, data) {
         console.log("token", token);
         localStorage.setItem("access_token", token);
         context.commit("retrieveveToken", token);
-        resolve(response);
-        Loading.hide();
+        resolve(response)
+        Loading.hide()
       })
       .catch(error => {
-        reject(error);
-        Loading.hide();
-      });
-  });
-};
+        reject(error)
+        Loading.hide()
+      })
+  })
+}
 
 export function destroyToken(context) {
   axiosInstance.defaults.headers.common['Authorization'] = 'Bearer ' + context.state.token;
@@ -91,16 +91,16 @@ export function destroyToken(context) {
       axiosInstance
         .post("/logout")
         .then(response => {
-          localStorage.removeItem("access_token");
+          localStorage.removeItem("access_token")
           context.commit("destroyToken");
-          resolve(response);
-          Loading.hide();
+          resolve(response)
+          Loading.hide()
         })
         .catch(error => {
-          localStorage.removeItem("access_token");
-          context.commit("destroyToken");
-          reject(error);
-          Loading.hide();
+          localStorage.removeItem("access_token")
+          context.commit("destroyToken")
+          reject(error)
+          Loading.hide()
         });
     });
   }

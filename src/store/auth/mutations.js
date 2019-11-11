@@ -12,7 +12,6 @@ export function destroyToken(state) {
 };
 
 export function setUserEmail(state, payload) {
-  console.log("email..: ", payload);
   state.email = payload
 }
 

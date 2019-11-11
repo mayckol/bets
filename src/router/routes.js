@@ -20,7 +20,10 @@ const routes = [
         path: '/dashboard',
         component: () => import('layouts/UserLayout.vue'),
         children: [
-            {path: '/', component: () => import('pages/user/HomeUser.vue'), name: 'dashboard'}
+            {path: '/', component: () => import('pages/user/HomeUser.vue'), name: 'dashboard'},
+            {path: '/matches', component: () => import('pages/user/Matches.vue'), name: 'matches'},
+            {path: '/bets', component: () => import('pages/user/Bets.vue'), name: 'bets'},
+            {path: '/get-last-matches', component: () => import('pages/user/Bets.vue'), name: 'lastMatches'}
         ],
         meta: {
             requiresAuth: true,

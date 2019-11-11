@@ -4,6 +4,8 @@ import Vuex from 'vuex'
 // import example from './module-example'
 import selectedComponent from './login'
 import auth from './auth'
+import match from './match'
+import bet from './bet'
 
 Vue.use(Vuex)
 
@@ -17,7 +19,9 @@ export default function (/* { ssrContext } */) {
         modules: {
             // example
             selectedComponent,
-            auth
+            auth,
+            match,
+            bet
         },
 
         // enable strict mode (adds overhead!)
