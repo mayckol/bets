@@ -109,7 +109,7 @@
                     case 10:
                         return 'Cruzeiro'
                     case 11:
-                        return 'CSA'
+                        return 'Csa'
                     case 12:
                         return 'Flamengo'
                     case 13:

@@ -14,12 +14,15 @@ const setMatches = ({commit}) => {
 }
 
 const lastMatches = ({commit}, teamId) => {
+
     return new Promise((resolve, reject) => {
 
         axiosInstance.post("get-last-matches", {
             teamId
         })
             .then(response => {
+                console.log('res')
+                console.log(response.data)
                 commit('SET_LAST_MATCHES', response.data)
             })
             .catch(error => {

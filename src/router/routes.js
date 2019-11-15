@@ -13,7 +13,8 @@ const routes = [
         component: () => import('layouts/AdmLayout.vue'),
         children: [
             {path: '/', component: () => import('pages/adm/HomeAdm.vue'),name: 'dashboard-adm'},
-            {path: '/chat', component: () => import('pages/adm/Chat.vue'), name: 'chat'}
+            {path: '/chat', component: () => import('pages/adm/Chat.vue'), name: 'chat'},
+            {path: '/permissions', component: () => import('pages/adm/Permissions.vue'), name: 'permissions'}
         ]
     },
     {

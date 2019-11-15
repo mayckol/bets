@@ -63,7 +63,7 @@
                         <q-item-label class="font-white" caption>Chat</q-item-label>
                     </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple to="/logout" exact>
+                <q-item clickable v-ripple @click="logout" exact>
                     <q-item-section avatar>
                         <q-icon name="exit_to_app"/>
                     </q-item-section>
@@ -88,6 +88,13 @@
         data() {
             return {
                 leftDrawerOpen: false
+            }
+        },
+        methods: {
+            async logout() {
+                await this.$store.dispatch("auth/destroyToken").then(response => {
+                    this.$router.push({name: "login"});
+                });
             }
         }
     }
