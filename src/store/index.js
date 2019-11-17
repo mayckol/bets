@@ -6,6 +6,8 @@ import selectedComponent from './login'
 import auth from './auth'
 import match from './match'
 import bet from './bet'
+import news from './news'
+import chat from './chat'
 
 Vue.use(Vuex)
 
@@ -21,7 +23,9 @@ export default function (/* { ssrContext } */) {
             selectedComponent,
             auth,
             match,
-            bet
+            bet,
+            news,
+            chat
         },
 
         // enable strict mode (adds overhead!)

@@ -1,12 +1,10 @@
 <template>
-    <div class="q-pa-md row justify-center">
+    <div class="q-pa-md row justify-center" ref="ChatUser">
         <div class="col-lg-4" style="border-radius: 10px">
             <q-scroll-area
-                    id="scroll-chat"
                     style="width: 400px;
-                    height: 400px;
-                    scroll-padding-top: 400px;
                     color: black !important;
+                    height: 400px;
                     max-height: 400px;
                     border: 1px solid black;
                     padding: 10px 10px 10px 10px;
@@ -14,13 +12,13 @@
                 <q-chat-message
                         text-color="black"
                         v-for="item in msg"
-                        :name="item.requester_id === 1 ? 'user' : 'me'"
+                        :name="item.requester_id === 2 ? 'adm' : 'me'"
                         :text="[item.msg]"
-                        :sent="item.requester_id === 1 ? true : false"
+                        :sent="item.requester_id === 2 ? true : false"
                 />
             </q-scroll-area>
             <div class="row border-r-b-l bg-info" style="max-width: 400px">
-                <form ref="chatAdm">
+                <form>
                     <div class="col-12 q-pa-lg">
                         <q-input type="text" style="max-width: 100%" v-model="newMsg"
                                  label="Digite uma mensagem"></q-input>
@@ -47,21 +45,19 @@
     import {mapActions, mapState} from 'vuex'
 
     export default {
-        name: "Chat",
+        name: "ChatUser",
         mounted() {
             this.$store.dispatch("auth/retrieveUser").then(res => {
                 console.log(res.data)
                 this.setMessages(res.data)
             })
-            var container = this.$el.querySelector("#scroll-chat");
-            console.log(container.scrollHeight)
-            container.scrollTop = container.scrollHeight;
         },
         data() {
             return {
                 // msg: '',
                 inputText: ['olá'],
                 newMsg: '',
+                mmm1: [1, 2, 3]
             }
         },
         methods: {
@@ -75,8 +71,7 @@
                     let self = self0
                     self.setMessages(self.user.id)
                 }, 5000)
-            },
-
+            }
         },
         computed: {
             ...mapState(
@@ -93,7 +88,6 @@
             let vm = this
             this.startInterval()
         }
-
     }
 </script>
 

@@ -13,7 +13,7 @@ const routes = [
         component: () => import('layouts/AdmLayout.vue'),
         children: [
             {path: '/', component: () => import('pages/adm/HomeAdm.vue'),name: 'dashboard-adm'},
-            {path: '/chat', component: () => import('pages/adm/Chat.vue'), name: 'chat'},
+            {path: '/chat-adm', component: () => import('pages/adm/Chat.vue'), name: 'chat-adm'},
             {path: '/permissions', component: () => import('pages/adm/Permissions.vue'), name: 'permissions'}
         ]
     },
@@ -24,6 +24,7 @@ const routes = [
             {path: '/', component: () => import('pages/user/HomeUser.vue'), name: 'dashboard'},
             {path: '/matches', component: () => import('pages/user/Matches.vue'), name: 'matches'},
             {path: '/bets', component: () => import('pages/user/Bets.vue'), name: 'bets'},
+            {path: '/chat-user', component: () => import('pages/user/ChatUser.vue'), name: 'chat-user'},
             {path: '/get-last-matches', component: () => import('pages/user/Bets.vue'), name: 'lastMatches'}
         ],
         meta: {

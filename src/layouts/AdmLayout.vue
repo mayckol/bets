@@ -54,7 +54,7 @@
                         <q-item-label class="font-white" caption>Habilitar usuário PRO</q-item-label>
                     </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple to="/chat" exact>
+                <q-item clickable v-ripple to="/chat-adm" exact>
                     <q-item-section avatar>
                         <q-icon name="chat"/>
                     </q-item-section>

@@ -16,7 +16,8 @@
                             style="max-height: 70px; max-width: 70px" class="img-fluid text-lowercase" alt="">
                 </div>
                 <div class="col-sm-3">
-                    <input v-model="bet.sending_team_goals" type="number" min="0" class="q-ml-lg q-mt-md border-input"
+                    <input type="number" min="0" class="q-ml-lg q-mt-md border-input"
+                           :value ='bet.sending_team_goals'
                            style="width: 50px">
                 </div>
             </div>
@@ -29,7 +30,8 @@
         <div class="col-sm-4 col-hover">
             <div class="row inline">
                 <div class="col-sm-3">
-                    <input v-model="bet.visiting_team_goals" type="number" min="0" class="q-mr-xl q-mt-md border-input"
+                    <input type="number" min="0" class="q-mr-xl q-mt-md border-input"
+                           :value ='bet.visiting_team_goals'
                            style="width: 50px">
                 </div>
                 <div class="col-sm-4">
@@ -60,7 +62,7 @@
         ],
         data() {
             return {
-                card: true
+                card: true,
             }
         },
         computed: {
