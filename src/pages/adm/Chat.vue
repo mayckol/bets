@@ -14,6 +14,7 @@
                 <q-chat-message
                         text-color="black"
                         v-for="item in msg"
+                        :key="item.id"
                         :name="item.requester_id === 1 ? 'user' : 'me'"
                         :text="[item.msg]"
                         :sent="item.requester_id === 1 ? true : false"

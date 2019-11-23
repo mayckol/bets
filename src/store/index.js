@@ -8,6 +8,7 @@ import match from './match'
 import bet from './bet'
 import news from './news'
 import chat from './chat'
+import team from './team'
 
 Vue.use(Vuex)
 
@@ -25,7 +26,8 @@ export default function (/* { ssrContext } */) {
             match,
             bet,
             news,
-            chat
+            chat,
+            team
         },
 
         // enable strict mode (adds overhead!)

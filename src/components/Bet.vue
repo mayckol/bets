@@ -12,7 +12,7 @@
                     <img
                             @mouseenter="lastMatches(bet.sending_team_id)"
                             :title="infoTeam"
-                            :src="`../statics/Times/${teams[(bet.sending_team_id - 2)].name}.png`"
+                            :src="`../statics/Times/${teams[(bet.sending_team_id - 2)].id}.png`"
                             style="max-height: 70px; max-width: 70px" class="img-fluid text-lowercase" alt="">
                 </div>
                 <div class="col-sm-3">
@@ -38,7 +38,7 @@
                     <img
                             @mouseenter="lastMatches(bet.visiting_team_id)"
                             :title="infoTeam"
-                            :src="`../statics/Times/${teams[(bet.visiting_team_id - 2)].name}.png`"
+                            :src="`../statics/Times/${teams[(bet.visiting_team_id - 2)].id}.png`"
                             style="max-height: 70px; max-width: 70px" class="img-fluid">
                 </div>
                 <div class="col-sm-4">

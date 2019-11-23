@@ -1,7 +1,7 @@
 <template>
     <q-layout view="lHh Lpr lFf">
         <q-header elevated>
-            <q-toolbar class="text-white bg-top-bar-adm">
+            <q-toolbar :class="'text-white '+ topBar">
                 <q-btn
                         flat
                         dense
@@ -12,7 +12,7 @@
                 />
 
                 <q-toolbar-title>
-                    Painel do Usuario
+                    Olá {{ user.name }}
                 </q-toolbar-title>
 
                 <div>Bet In Foot</div>
@@ -23,7 +23,7 @@
                 v-model="leftDrawerOpen"
                 show-if-above
                 bordered
-                content-class="bg-left-bar-adm"
+                :content-class="leftBar"
         >
             <q-list>
                 <q-item-label header>Ações</q-item-label>
@@ -75,7 +75,7 @@
             </q-list>
         </q-drawer>
 
-        <q-page-container>
+        <q-page-container :class="mainBg">
             <router-view/>
         </q-page-container>
     </q-layout>
@@ -96,6 +96,33 @@
                     this.$router.push({name: "login"});
                 });
             }
+        },
+        computed: {
+            user() {
+                return this.$store.state.auth.user
+            },
+            topBar() {
+                if (this.user.team_id) {
+                    return this.user.permission === 4 && this.user.team_id !== null ? `bg-top-bar-team-${this.user.team_id}` : 'bg-top-bar-adm'
+                }else {
+                    return 'bg-top-bar-adm'
+                }
+            },
+            mainBg() {
+                if (this.user.team_id) {
+                    return this.user.permission === 4 ? `layout-team-${this.user.team_id}` : ''
+                }else {
+                    return ''
+                }
+            },
+            leftBar() {
+                if (this.user.team_id) {
+                    return this.user.permission === 4 ? `bg-left-bar-team-${this.user.team_id}` : 'bg-left-bar-adm'
+                } else {
+                    return 'bg-left-bar-adm'
+                }
+            },
+
         }
     }
 </script>

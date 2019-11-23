@@ -101,4 +101,21 @@ export function destroyToken(context) {
                 });
         });
     }
-};
+}
+const setFavoriteTeam = (context, data) => {
+    return new Promise((resolve, reject) => {
+        axiosInstance.post('/set-favorite-team', {
+            favorite_team: data,
+        })
+            .then(response => {
+                console.log(response.data.favorite_team)
+                context.commit('SET_FAVORITE_TEAM', response.data.favorite_team)
+            })
+            .catch(error => {
+                reject(error)
+            })
+    })
+}
+export {
+    setFavoriteTeam
+}

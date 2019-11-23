@@ -5,7 +5,7 @@
             <p>
                 {{ teams[(match.sending_team_id - 2)].name.substring(0, 3) }}
                 <img
-                        :src="`../statics/Times/${teams[(match.sending_team_id - 2)].name}.png`"
+                        :src="`../statics/Times/${teams[(match.sending_team_id - 2)].id}.png`"
                         style="max-height: 70px; max-width: 70px" class="img-fluid text-lowercase">
             </p>
         </div>
@@ -18,7 +18,7 @@
         <div class="col-sm-5 col-hover">
             <p>
                 <img
-                        :src="`../statics/Times/${teams[(match.visiting_team_id - 2)].name}.png`"
+                        :src="`../statics/Times/${teams[(match.visiting_team_id - 2)].id}.png`"
                         style="max-height: 70px; max-width: 70px" class="img-fluid">
                 {{ teams[(match.visiting_team_id - 2)].name.substring(0, 3) }}
             </p>

@@ -1,23 +1,29 @@
 <template>
-    <div class="q-pa-md row justify-center" ref="ChatUser">
-        <div class="col-lg-4" style="border-radius: 10px">
-            <q-scroll-area
-                    style="width: 400px;
+    <div class="q-pa-md row justify-center" style="min-width: 100%; min-height: 1080px">
+        <div class="col-sm-4" style="border-radius: 10px">
+            <div class="col-sm-12">
+                <q-scroll-area
+                        style="width: 100%;
+                        border-radius: 10px;
                     color: black !important;
+                    background-color: white !important;
                     height: 400px;
                     max-height: 400px;
                     border: 1px solid black;
                     padding: 10px 10px 10px 10px;
                     margin-top: 50px">
-                <q-chat-message
-                        text-color="black"
-                        v-for="item in msg"
-                        :name="item.requester_id === 2 ? 'adm' : 'me'"
-                        :text="[item.msg]"
-                        :sent="item.requester_id === 2 ? true : false"
-                />
-            </q-scroll-area>
-            <div class="row border-r-b-l bg-info" style="max-width: 400px">
+                    <q-chat-message
+                            text-color="black"
+                            v-for="item in msg"
+                            :key="item.id"
+                            :name="item.requester_id === 2 ? 'adm' : 'me'"
+                            :text="[item.msg]"
+                            :sent="item.requester_id === 2 ? true : false"
+                    />
+                </q-scroll-area>
+            </div>
+            <div class="col-sm-12 bg-green-4" style="border-radius: 10px">
+                <!--            <div class="row border-r-b-l bg-info" style="max-width: 400px">-->
                 <form>
                     <div class="col-12 q-pa-lg">
                         <q-input type="text" style="max-width: 100%" v-model="newMsg"

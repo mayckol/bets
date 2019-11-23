@@ -18,3 +18,10 @@ export function setUserEmail(state, payload) {
 export function setUser(state, payload) {
   state.user = payload
 }
+
+const SET_FAVORITE_TEAM = (state, payload) => {
+  state.user.team_id = payload
+}
+export {
+    SET_FAVORITE_TEAM
+}
