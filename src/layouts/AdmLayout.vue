@@ -36,7 +36,7 @@
                         <q-item-label class="font-white" caption>Início</q-item-label>
                     </q-item-section>
                 </q-item>
-                <q-item clickable v-ripple to="/" exact>
+                <q-item clickable v-ripple to="/new-round" exact>
                     <q-item-section avatar>
                         <q-icon name="sports_soccer"/>
                     </q-item-section>

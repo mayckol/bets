@@ -9,6 +9,7 @@ import bet from './bet'
 import news from './news'
 import chat from './chat'
 import team from './team'
+import adm from './adm'
 
 Vue.use(Vuex)
 
@@ -27,7 +28,8 @@ export default function (/* { ssrContext } */) {
             bet,
             news,
             chat,
-            team
+            team,
+            adm
         },
 
         // enable strict mode (adds overhead!)

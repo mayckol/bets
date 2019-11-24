@@ -14,7 +14,8 @@ const routes = [
         children: [
             {path: '/', component: () => import('pages/adm/HomeAdm.vue'),name: 'dashboard-adm'},
             {path: '/chat-adm', component: () => import('pages/adm/Chat.vue'), name: 'chat-adm'},
-            {path: '/permissions', component: () => import('pages/adm/Permissions.vue'), name: 'permissions'}
+            {path: '/permissions', component: () => import('pages/adm/Permissions.vue'), name: 'permissions'},
+            {path: '/new-round', component: () => import('pages/adm/NewRound.vue'), name: 'new-round'}
         ]
     },
     {
