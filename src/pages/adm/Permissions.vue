@@ -41,6 +41,7 @@
 <script>
 
     import {mapState, mapActions} from 'vuex'
+    import { axiosInstance } from 'boot/axios'
 
     export default {
 
@@ -70,15 +71,23 @@
                 e.preventDefault();
             },
             updatePermission() {
-                this.$store.dispatch('updatePermissions', {
-                    userId: this.userSelected.id,
-                    userPermission: this.permission
-                }).then(response => {
-                    alert('Permissão atualizada com sucesso!')
-                    this.$router.push({name: 'Main'})
-                }).catch(error => {
-                    console.log(error)
-                    this.serverError = error.response.data
+                return new Promise((resolve, reject) => {
+                    axiosInstance.post('/update-permission', {
+                        userId: this.userSelected.id,
+                        userPermission: this.permission
+                    })
+                        .then(response => {
+                            console.log(response)
+                            if (response.status === 200){
+                                alert('Permissão atualizada com sucesso!')
+                                this.$router.push({name: 'dashboard-adm'})
+                            } else {
+                                alert('Não foi possível realizar o cadastro!')
+                            }
+                        })
+                        .catch(error => {
+                            reject(error)
+                        })
                 })
             }
         }
